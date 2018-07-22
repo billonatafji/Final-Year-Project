@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Sat May  5 15:08:05 2018 by Netedit Version 0.32.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/Users/billo/OneDrive%20-%20American%20University%20of%20Beirut/FYP/Main/sumo-data/map.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/Users/billo/OneDrive%20-%20American%20University%20of%20Beirut/FYP/Main/sumo-data/map.net.xml"/>
+    </output>
+
+    <processing>
+        <no-turnarounds value="true"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+        <junctions.corner-detail value="0"/>
+        <rectangular-lane-cut value="false"/>
+        <walkingareas value="false"/>
+    </processing>
+
+</configuration>
+-->
+
+<net version="0.27" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="-728423.50,-3753332.48" convBoundary="14.95,294.47,2064.29,708.13" origBoundary="35.470204,33.895645,35.491560,33.903074" projParameter="+proj=utm +zone=36 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"/>
+
+    <type id="highway.bridleway" priority="1" numLanes="1" speed="2.78" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.bus_guideway" priority="1" numLanes="1" speed="8.33" allow="bus" oneway="1"/>
+    <type id="highway.cycleway" priority="1" numLanes="1" speed="5.56" allow="bicycle" oneway="0" width="1.00"/>
+    <type id="highway.footway" priority="1" numLanes="1" speed="2.78" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.ford" priority="1" numLanes="1" speed="2.78" allow="army" oneway="0"/>
+    <type id="highway.living_street" priority="3" numLanes="1" speed="2.78" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.motorway" priority="13" numLanes="2" speed="44.44" allow="private emergency authority army vip passenger hov taxi bus coach delivery truck trailer motorcycle evehicle custom1 custom2" oneway="1"/>
+    <type id="highway.motorway_link" priority="12" numLanes="1" speed="22.22" allow="private emergency authority army vip passenger hov taxi bus coach delivery truck trailer motorcycle evehicle custom1 custom2" oneway="1"/>
+    <type id="highway.path" priority="1" numLanes="1" speed="2.78" allow="bicycle pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.pedestrian" priority="1" numLanes="1" speed="2.78" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.primary" priority="9" numLanes="2" speed="27.78" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.primary_link" priority="8" numLanes="1" speed="22.22" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.raceway" priority="14" numLanes="2" speed="83.33" allow="vip" oneway="0"/>
+    <type id="highway.residential" priority="4" numLanes="1" speed="13.89" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.secondary" priority="7" numLanes="2" speed="27.78" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.secondary_link" priority="6" numLanes="1" speed="22.22" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.service" priority="2" numLanes="1" speed="5.56" allow="delivery bicycle pedestrian" oneway="0"/>
+    <type id="highway.services" priority="1" numLanes="1" speed="8.33" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.stairs" priority="1" numLanes="1" speed="1.39" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.step" priority="1" numLanes="1" speed="1.39" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.steps" priority="1" numLanes="1" speed="1.39" allow="pedestrian" oneway="1" width="2.00"/>
+    <type id="highway.tertiary" priority="6" numLanes="1" speed="22.22" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.tertiary_link" priority="5" numLanes="1" speed="22.22" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.track" priority="1" numLanes="1" speed="5.56" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.trunk" priority="11" numLanes="2" speed="27.78" disallow="tram rail_urban rail rail_electric bicycle pedestrian ship" oneway="0"/>
+    <type id="highway.trunk_link" priority="10" numLanes="1" speed="22.22" disallow="tram rail_urban rail rail_electric bicycle pedestrian ship" oneway="0"/>
+    <type id="highway.unclassified" priority="5" numLanes="1" speed="13.89" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="highway.unsurfaced" priority="1" numLanes="1" speed="8.33" disallow="tram rail_urban rail rail_electric ship" oneway="0"/>
+    <type id="railway.light_rail" priority="15" numLanes="1" speed="27.78" allow="rail_urban" oneway="1"/>
+    <type id="railway.preserved" priority="15" numLanes="1" speed="27.78" allow="rail" oneway="1"/>
+    <type id="railway.rail" priority="15" numLanes="1" speed="83.33" allow="rail rail_electric" oneway="1"/>
+    <type id="railway.subway" priority="15" numLanes="1" speed="27.78" allow="rail_urban" oneway="1"/>
+    <type id="railway.tram" priority="15" numLanes="1" speed="13.89" allow="tram" oneway="1"/>
+
+    <edge id=":288301523_0" function="internal">
+        <lane id=":288301523_0_0" index="0" speed="13.89" length="23.10" shape="1797.47,668.30 1791.85,665.33 1787.98,662.73 1784.01,661.24 1778.08,661.60"/>
+        <lane id=":288301523_0_1" index="1" speed="13.89" length="23.10" shape="1798.72,665.24 1792.56,662.07 1788.29,659.38 1783.91,657.90 1777.42,658.37"/>
+        <lane id=":288301523_0_2" index="2" speed="13.89" length="23.10" shape="1799.96,662.18 1793.27,658.81 1788.60,656.04 1783.82,654.57 1776.76,655.14"/>
+    </edge>
+    <edge id=":288301523_3" function="internal">
+        <lane id=":288301523_3_0" index="0" disallow="tram rail_urban rail rail_electric ship" speed="13.89" length="27.71" shape="1799.96,662.18 1791.88,658.14 1786.30,653.60 1783.22,648.55 1782.65,643.01"/>
+    </edge>
+    <edge id=":288301523_4" function="internal">
+        <lane id=":288301523_4_0" index="0" disallow="tram rail_urban rail rail_electric ship" speed="13.89" length="23.42" shape="1801.20,659.12 1794.12,655.65 1789.21,651.87 1786.48,647.79 1785.92,643.39"/>
+    </edge>
+    <edge id=":288301523_5" function="internal">
+        <lane id=":288301523_5_0" index="0" disallow="tram rail_urban rail rail_electric ship" speed="20.84" length="11.53" shape="1792.48,644.16 1792.93,645.75 1794.68,647.09 1797.73,648.19 1802.08,649.03"/>
+    </edge>
+    <edge id=":288301523_6" function="internal">
+        <lane id=":288301523_6_0" index="0" speed="13.89" length="22.27" shape="1792.48,644.16 1791.04,649.32 1788.05,653.41 1783.51,656.43 1777.42,658.37"/>
+    </edge>
+    <edge id=":288301523_7" function="internal">
+        <lane id=":288301523_7_0" index="0" speed="13.89" length="18.11" shape="1789.20,643.77 1788.03,647.87 1785.57,651.13 1781.81,653.55 1776.76,655.14"/>
+    </edge>
+    <edge id=":288301523_8" function="internal">
+        <lane id=":288301523_8_0" index="0" disallow="tram rail_urban rail rail_electric ship" speed="20.84" length="8.98" shape="1775.12,647.11 1778.30,646.31 1780.61,645.36 1782.06,644.26 1782.65,643.01"/>
+    </edge>
+    <edge id=":288301523_9" function="internal">
+        <lane id=":288301523_9_0" index="0" disallow="tram rail_urban rail rail_electric ship" speed="27.78" length="27.31" shape="1775.12,647.11 1781.55,646.82 1787.15,648.26 1793.46,650.43 1802.00,652.36"/>
+        <lane id=":288301523_9_1" index="1" disallow="tram rail_urban rail rail_electric ship" speed="27.78" length="27.31" shape="1775.78,650.34 1782.14,650.07 1787.58,651.56 1793.65,653.76 1801.93,655.68"/>
+    </edge>
+
+    <edge id="ain_mreysse-aub" from="288301523" to="288306509" priority="1" shape="1786.65,651.43 1737.92,661.39 1734.46,661.85 1717.61,664.71 1675.91,670.89 1422.98,708.13">
+        <lane id="ain_mreysse-aub_0" index="0" speed="13.89" length="357.97" shape="1778.08,661.60 1739.29,669.53 1735.69,670.01 1718.91,672.86 1677.12,679.05 1424.18,716.29"/>
+        <lane id="ain_mreysse-aub_1" index="1" speed="13.89" length="357.97" shape="1777.42,658.37 1738.74,666.27 1735.20,666.75 1718.39,669.60 1676.63,675.79 1423.70,713.03"/>
+        <lane id="ain_mreysse-aub_2" index="2" speed="13.89" length="357.97" shape="1776.76,655.14 1738.19,663.02 1734.71,663.48 1717.87,666.34 1676.15,672.52 1423.22,709.76"/>
+    </edge>
+    <edge id="ain_mreysse-bliss" from="288301523" to="288296677" priority="4" type="highway.residential" shape="1786.65,651.43 1788.22,637.93 1788.89,630.99 1789.38,623.53 1789.33,617.17 1789.09,608.38 1788.64,601.33 1787.76,596.12 1786.41,590.53 1775.64,556.52 1769.75,537.93 1756.85,496.60 1750.99,477.31">
+        <lane id="ain_mreysse-bliss_0" index="0" disallow="tram rail_urban rail rail_electric ship" speed="13.89" length="170.67" shape="1782.65,643.01 1783.30,637.41 1783.96,630.59 1784.43,623.39 1784.38,617.26 1784.14,608.61 1783.72,601.90 1782.91,597.11 1781.64,591.86 1770.92,558.01 1765.03,539.41 1752.12,498.06 1746.25,478.75"/>
+        <lane id="ain_mreysse-bliss_1" index="1" disallow="tram rail_urban rail rail_electric ship" speed="13.89" length="170.67" shape="1785.92,643.39 1786.58,637.76 1787.25,630.86 1787.73,623.48 1787.68,617.20 1787.44,608.46 1787.00,601.52 1786.14,596.45 1784.82,590.97 1774.07,557.02 1768.18,538.42 1755.27,497.09 1749.41,477.79"/>
+    </edge>
+    <edge id="ain_mreysse-zeytouna" from="288301523" to="34035912" priority="9" type="highway.primary" spreadType="center" shape="1786.65,651.43 1797.12,651.65 1806.17,652.96 1812.73,654.42 1821.46,657.21 1827.79,659.85 1834.21,662.99 1844.47,668.51 1861.17,679.24 1865.02,681.16 1868.54,682.49 1871.11,683.25 1874.94,684.09 1878.43,684.53 1882.02,685.02 2064.29,686.20">
+        <lane id="ain_mreysse-zeytouna_0" index="0" disallow="tram rail_urban rail rail_electric ship" speed="27.78" length="269.68" shape="1802.08,649.03 1806.77,649.71 1813.59,651.23 1822.60,654.11 1829.15,656.84 1835.72,660.05 1846.15,665.66 1862.80,676.37 1866.34,678.13 1869.59,679.36 1871.93,680.05 1875.50,680.83 1878.86,681.26 1882.25,681.72 2064.31,682.90"/>
+        <lane id="ain_mreysse-zeytouna_1" index="1" disallow="tram rail_urban rail rail_electric ship" speed="27.78" length="269.68" shape="1802.00,652.36 1806.17,652.96 1812.73,654.42 1821.46,657.21 1827.79,659.85 1834.21,662.99 1844.47,668.51 1861.17,679.24 1865.02,681.16 1868.54,682.49 1871.11,683.25 1874.94,684.09 1878.43,684.53 1882.02,685.02 2064.29,686.20"/>
+        <lane id="ain_mreysse-zeytouna_2" index="2" disallow="tram rail_urban rail rail_electric ship" speed="27.78" length="269.68" shape="1801.93,655.68 1805.57,656.21 1811.87,657.61 1820.32,660.31 1826.43,662.86 1832.70,665.93 1842.79,671.36 1859.54,682.11 1863.70,684.19 1867.49,685.62 1870.29,686.45 1874.38,687.35 1878.00,687.80 1881.79,688.32 2064.27,689.50"/>
+    </edge>
+    <edge id="aub-ain_mreysse" from="276494976" to="288301523" priority="9" type="highway.primary" spreadType="center" shape="1416.76,699.37 1738.63,654.80 1750.38,653.01 1759.64,651.48 1770.53,649.71 1786.62,646.48">
+        <lane id="aub-ain_mreysse_0" index="0" disallow="tram rail_urban rail rail_electric ship" speed="27.78" length="362.26" shape="1416.53,697.74 1738.39,653.17 1750.12,651.38 1759.37,649.85 1770.24,648.09 1775.12,647.11"/>
+        <lane id="aub-ain_mreysse_1" index="1" disallow="tram rail_urban rail rail_electric ship" speed="27.78" length="362.26" shape="1416.99,701.00 1738.87,656.43 1750.64,654.64 1759.91,653.11 1770.82,651.33 1775.78,650.34"/>
+    </edge>
+    <edge id="bliss-ain_mreysse" from="288296677" to="288301523" priority="4" type="highway.residential" shape="1750.99,477.31 1756.85,496.60 1769.75,537.93 1775.64,556.52 1786.41,590.53 1787.76,596.12 1788.64,601.33 1789.09,608.38 1789.33,617.17 1789.38,623.53 1788.89,630.99 1788.22,637.93 1786.65,651.43">
+        <lane id="bliss-ain_mreysse_0" index="0" disallow="tram rail_urban rail rail_electric ship" speed="13.89" length="173.38" shape="1755.73,475.87 1761.58,495.14 1774.47,536.45 1780.36,555.03 1791.18,589.20 1792.61,595.13 1793.56,600.76 1794.04,608.15 1794.28,617.08 1794.33,623.67 1793.82,631.39 1793.14,638.45 1792.48,644.16"/>
+        <lane id="bliss-ain_mreysse_1" index="1" disallow="tram rail_urban rail rail_electric ship" speed="13.89" length="173.38" shape="1752.57,476.83 1758.43,496.11 1771.32,537.44 1777.21,556.02 1788.00,590.09 1789.38,595.79 1790.28,601.14 1790.74,608.30 1790.98,617.14 1791.03,623.58 1790.53,631.12 1789.86,638.10 1789.20,643.77"/>
+    </edge>
+    <edge id="zeytouna-ain_mreysse" from="288307432" to="288301523" priority="1" shape="2063.87,696.65 1898.16,696.67 1891.55,696.27 1885.42,695.41 1881.59,694.50 1878.32,693.77 1875.22,692.86 1870.79,691.13 1867.76,689.95 1865.75,689.40 1861.93,687.76 1859.75,686.49 1856.47,684.85 1847.36,679.21 1840.85,675.65 1830.67,670.42 1825.79,667.75 1820.77,665.75 1815.44,663.51 1809.55,660.80 1803.48,658.27 1786.65,651.43">
+        <lane id="zeytouna-ain_mreysse_0" index="0" speed="13.89" length="273.21" shape="2063.87,708.20 1897.81,708.22 1890.40,707.77 1883.28,706.77 1878.99,705.75 1875.43,704.96 1871.49,703.80 1866.59,701.89 1864.13,700.93 1861.93,700.33 1856.73,698.10 1854.25,696.66 1850.84,694.95 1841.55,689.19 1835.44,685.86 1825.26,680.62 1820.86,678.22 1816.39,676.44 1810.79,674.08 1804.91,671.38 1799.08,668.95 1797.47,668.30"/>
+        <lane id="zeytouna-ain_mreysse_1" index="1" speed="13.89" length="273.21" shape="2063.87,704.90 1897.91,704.92 1890.73,704.49 1883.89,703.53 1879.73,702.54 1876.26,701.76 1872.55,700.68 1867.79,698.82 1865.17,697.79 1863.02,697.21 1858.21,695.14 1855.82,693.75 1852.45,692.06 1843.21,686.34 1836.99,682.94 1826.80,677.71 1822.27,675.23 1817.64,673.39 1812.12,671.06 1806.24,668.36 1800.34,665.90 1798.72,665.24"/>
+        <lane id="zeytouna-ain_mreysse_2" index="2" speed="13.89" length="273.21" shape="2063.87,701.60 1898.01,701.62 1891.06,701.20 1884.50,700.28 1880.48,699.32 1877.08,698.57 1873.62,697.55 1868.99,695.74 1866.20,694.66 1864.11,694.08 1859.70,692.19 1857.39,690.85 1854.06,689.18 1844.87,683.49 1838.53,680.02 1828.35,674.79 1823.68,672.24 1818.89,670.33 1813.45,668.04 1807.56,665.33 1801.60,662.85 1799.96,662.18"/>
+        <lane id="zeytouna-ain_mreysse_3" index="3" speed="13.89" length="273.21" shape="2063.87,698.30 1898.11,698.32 1891.39,697.91 1885.11,697.03 1881.22,696.11 1877.91,695.37 1874.69,694.42 1870.19,692.67 1867.24,691.52 1865.20,690.96 1861.19,689.24 1858.96,687.94 1855.67,686.29 1846.53,680.64 1840.08,677.11 1829.90,671.88 1825.09,669.25 1820.14,667.28 1814.78,665.02 1808.89,662.31 1802.85,659.80 1801.20,659.12"/>
+    </edge>
+
+    <tlLogic id="288301523" type="static" programID="0" offset="0">
+        <phase duration="44" state="GGGrrGrrGGG"/>
+        <phase duration="20" state="rrrrrGGGGrr"/>
+        <phase duration="14" state="GGGGGGrrrrr"/>
+        <phase duration="1" state="rrrrrrrrrrr"/>
+    </tlLogic>
+
+    <junction id="276494976" type="dead_end" x="1416.76" y="699.37" incLanes="" intLanes="" shape="1417.21,702.59 1416.31,696.15"/>
+    <junction id="288296677" type="dead_end" x="1750.99" y="477.31" incLanes="ain_mreysse-bliss_0 ain_mreysse-bliss_1" intLanes="" shape="1751.04,477.30 1744.72,479.21 1750.94,477.32"/>
+    <junction id="288301523" type="traffic_light" x="1786.65" y="651.43" incLanes="zeytouna-ain_mreysse_0 zeytouna-ain_mreysse_1 zeytouna-ain_mreysse_2 zeytouna-ain_mreysse_3 bliss-ain_mreysse_0 bliss-ain_mreysse_1 aub-ain_mreysse_0 aub-ain_mreysse_1" intLanes=":288301523_0_0 :288301523_0_1 :288301523_0_2 :288301523_3_0 :288301523_4_0 :288301523_5_0 :288301523_6_0 :288301523_7_0 :288301523_8_0 :288301523_9_0 :288301523_9_1" shape="1796.87,669.78 1801.80,657.64 1801.90,657.29 1802.11,647.42 1794.07,644.34 1781.06,642.83 1774.80,645.54 1778.40,663.17">
+        <request index="0" response="00000000000" foes="00011000000" cont="0"/>
+        <request index="1" response="00000000000" foes="00011000000" cont="0"/>
+        <request index="2" response="00000000000" foes="00011000000" cont="0"/>
+        <request index="3" response="11100000000" foes="11111000000" cont="0"/>
+        <request index="4" response="11100000000" foes="11111000000" cont="0"/>
+        <request index="5" response="00000000000" foes="00000000000" cont="0"/>
+        <request index="6" response="11000011111" foes="11000011111" cont="0"/>
+        <request index="7" response="11000011111" foes="11000011111" cont="0"/>
+        <request index="8" response="00000000000" foes="00000011000" cont="0"/>
+        <request index="9" response="00000000000" foes="00011011000" cont="0"/>
+        <request index="10" response="00000000000" foes="00011011000" cont="0"/>
+    </junction>
+    <junction id="288306509" type="dead_end" x="1422.98" y="708.13" incLanes="ain_mreysse-aub_0 ain_mreysse-aub_1 ain_mreysse-aub_2" intLanes="" shape="1424.41,717.87 1422.99,708.18"/>
+    <junction id="288307432" type="dead_end" x="2063.87" y="696.65" incLanes="" intLanes="" shape="2063.87,696.70 2063.87,709.80"/>
+    <junction id="34035912" type="dead_end" x="2064.29" y="686.20" incLanes="ain_mreysse-zeytouna_0 ain_mreysse-zeytouna_1 ain_mreysse-zeytouna_2" intLanes="" shape="2064.32,681.30 2064.26,691.10"/>
+    <junction id="5297843951" type="dead_end" x="14.95" y="294.47" incLanes="" intLanes="" shape="14.95,294.47"/>
+
+    <connection from="aub-ain_mreysse" to="ain_mreysse-bliss" fromLane="0" toLane="0" via=":288301523_8_0" tl="288301523" linkIndex="8" dir="r" state="o"/>
+    <connection from="aub-ain_mreysse" to="ain_mreysse-zeytouna" fromLane="0" toLane="1" via=":288301523_9_0" tl="288301523" linkIndex="9" dir="s" state="o"/>
+    <connection from="aub-ain_mreysse" to="ain_mreysse-zeytouna" fromLane="1" toLane="2" via=":288301523_9_1" tl="288301523" linkIndex="10" dir="s" state="o"/>
+    <connection from="bliss-ain_mreysse" to="ain_mreysse-zeytouna" fromLane="0" toLane="0" via=":288301523_5_0" tl="288301523" linkIndex="5" dir="r" state="o"/>
+    <connection from="bliss-ain_mreysse" to="ain_mreysse-aub" fromLane="0" toLane="1" via=":288301523_6_0" tl="288301523" linkIndex="6" dir="l" state="o"/>
+    <connection from="bliss-ain_mreysse" to="ain_mreysse-aub" fromLane="1" toLane="2" via=":288301523_7_0" tl="288301523" linkIndex="7" dir="l" state="o"/>
+    <connection from="zeytouna-ain_mreysse" to="ain_mreysse-aub" fromLane="0" toLane="0" via=":288301523_0_0" tl="288301523" linkIndex="0" dir="s" state="o"/>
+    <connection from="zeytouna-ain_mreysse" to="ain_mreysse-aub" fromLane="1" toLane="1" via=":288301523_0_1" tl="288301523" linkIndex="1" dir="s" state="o"/>
+    <connection from="zeytouna-ain_mreysse" to="ain_mreysse-aub" fromLane="2" toLane="2" via=":288301523_0_2" tl="288301523" linkIndex="2" dir="s" state="o"/>
+    <connection from="zeytouna-ain_mreysse" to="ain_mreysse-bliss" fromLane="2" toLane="0" via=":288301523_3_0" tl="288301523" linkIndex="3" dir="L" state="o"/>
+    <connection from="zeytouna-ain_mreysse" to="ain_mreysse-bliss" fromLane="3" toLane="1" via=":288301523_4_0" tl="288301523" linkIndex="4" dir="L" state="o"/>
+
+    <connection from=":288301523_0" to="ain_mreysse-aub" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":288301523_0" to="ain_mreysse-aub" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":288301523_0" to="ain_mreysse-aub" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":288301523_3" to="ain_mreysse-bliss" fromLane="0" toLane="0" dir="L" state="M"/>
+    <connection from=":288301523_4" to="ain_mreysse-bliss" fromLane="0" toLane="1" dir="L" state="M"/>
+    <connection from=":288301523_5" to="ain_mreysse-zeytouna" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":288301523_6" to="ain_mreysse-aub" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":288301523_7" to="ain_mreysse-aub" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":288301523_8" to="ain_mreysse-bliss" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":288301523_9" to="ain_mreysse-zeytouna" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":288301523_9" to="ain_mreysse-zeytouna" fromLane="1" toLane="2" dir="s" state="M"/>
+
+</net>

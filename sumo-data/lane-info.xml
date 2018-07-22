@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Sat May  5 15:10:11 2018 by SUMO gui Version 0.32.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="sumo-data/map.net.xml"/>
+        <route-files value="sumo-data/map.rou.xml"/>
+        <additional-files value="sumo-data/additional-files.xml"/>
+    </input>
+
+    <output>
+        <queue-output value="localhost:5123"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="1000"/>
+    </time>
+
+    <report>
+        <no-step-log value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="58947"/>
+    </traci_server>
+
+    <gui_only>
+        <gui-settings-file value="sumo-data/cross.gui-settings.xml"/>
+        <quit-on-end value="true"/>
+        <start value="true"/>
+    </gui_only>
+
+</configuration>

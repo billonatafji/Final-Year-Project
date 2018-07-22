@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Welcome</title>
+
+	<script type="text/javascript" src="{{url_for('static', filename = 'jquery-3.3.1.min.js') }}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+	<script type="text/javascript" src="{{url_for('static', filename = 'bootstrap-4/js/bootstrap.min.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static', filename = 'bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static', filename = 'jquery-validation-1/dist/jquery.validate.min.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static', filename = 'jquery-validation-1/dist/additional-methods.min.js')}}"></script>
+
+
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'bootstrap-4/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'fa/web-fonts-with-css/css/fontawesome-all.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}">
+
+	<style>
+		.switch {
+			position: relative;
+			display: inline-block;
+			width: 60px;
+			height: 34px;
+		}
+
+		.switch input {
+			display: none;
+		}
+
+		.slider {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #ccc;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		.slider:before {
+			position: absolute;
+			content: "";
+			height: 26px;
+			width: 26px;
+			left: 4px;
+			bottom: 4px;
+			background-color: white;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		input:checked+.slider {
+			background-color: #007bff;
+		}
+
+		input:focus+.slider {
+			box-shadow: 0 0 1px #007bff;
+		}
+
+		input:checked+.slider:before {
+			-webkit-transform: translateX(26px);
+			-ms-transform: translateX(26px);
+			transform: translateX(26px);
+		}
+
+		/* Rounded sliders */
+
+		.slider.round {
+			border-radius: 34px;
+		}
+
+		.slider.round:before {
+			border-radius: 50%;
+		}
+
+		.loader {
+			border: 16px solid #ffc107;
+			border-radius: 50%;
+			border-top: 16px solid #007bff;
+			border-right: 16px solid green;
+			border-bottom: 16px solid red;
+			width: 120px;
+			height: 120px;
+			-webkit-animation: spin 2s linear infinite;
+			animation: spin 2s linear infinite;
+		}
+
+		@-webkit-keyframes spin {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+			}
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		label.error{
+			color: #dc3545!important;
+		}
+		.error.valid{
+			display: none !important;
+		}
+	</style>
+
+</head>
+
+<body class="bg-light">
+	<form class="form mt-5 mb-5" id="gui_variables" action="{{url_for('load_lanes') }}" method="post" enctype="multipart/form-data">
+		<fieldset>
+			<div class="container p-0">
+				<div class="bg-primary text-white text-center pt-3 m-0 rounded">
+					<div class="h1">
+						<div>Smart Traffic Light Panel</div>
+						<i class="fas fa-car pr-2 text-danger"></i>
+						<i class="fas fa-car pr-2 text-warning"></i>
+						<i class="fas fa-car pr-2 text-success"></i>
+					</div>
+				</div>
+			</div>
+			<div class="container shadow content-body">
+				<div class="row">
+					<div class="col-md-10 offset-md-1">
+						<div class="">
+							<div class="">
+								<div class="p-1">
+									<div class="">
+										<div class="h4 p-2 m-2 rounded text-center">
+											Select a Mode
+										</div>
+										<!-- Nav tabs -->
+										<ul class="nav nav-pills nav-fill h4">
+											<li class="nav-item">
+												<a class="nav-link" id="train_model" data-toggle="pill" href="#main">
+													<i class="fas fa-book pr-2"></i>Train Model</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="test_model" data-toggle="pill" href="#main">
+													<i class="fas fa-chart-bar pr-2"></i>Test Model</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="test_static" data-toggle="pill" href="#main">
+													<i class="fas fa-chart-bar pr-2"></i>Test Static</a>
+											</li>
+										</ul>
+									</div>
+									<!-- Tab panes -->
+									<div class="tab-content border border-primary rounded mb-3">
+										<div class="tab-pane fade container" id="main">
+											<div class=" pt-3 ">
+												<div class="row pt-2 pl-5 pr-5" id="fields">
+													<div class="form-group col-md-12">
+														<div class="row">
+															<div class="col-md-12">
+																<div class="row">
+																	<label class="label col-md-3 lead">
+																		<strong>Data</strong>
+																	</label>
+																	<div class="col h6">
+																		<button type="button" class="btn btn-primary mr-2" id="data_files">
+																			<i class="fas fa-cogs pr-1"></i>Select Files
+																		</button>
+																		<label class="control-label" id="data_files_label">
+																		</label>
+																		<input type="file" class="form-control-file d-none" id="hidden_data_files" name="data" multiple required>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-group col-md-12" id="phase_duration_view">
+														<div class="row">
+															<div class="col-md-3">
+																<label class="control-label lead">
+																	<strong>Phase Duration</strong>
+																</label>
+															</div>
+															<div class="col-md-3">
+																<select class="form-control" name="phase_duration">
+																	<option value="5">
+																		5 seconds
+																	</option>
+																	<option value="10">
+																		10 seconds
+																	</option>
+																	<option value="15">
+																		15 seconds
+																	</option>
+																	<option value="20">
+																		20 seconds
+																	</option>
+																	<option value="25">
+																		25 seconds
+																	</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div></div>
+													<div class="form-group col-md-12" id="date_view">
+														<div class="row">
+															<div class="col-md-3">
+																<label class="control-label lead">
+																	<strong>Date</strong>
+																</label>
+															</div>
+															<div class="col">
+																<div class="row">
+																	<div class="col-md-4">
+																		<input class="form-control datepicker" id="current_day" name="current_day">
+																	</div>
+																	<div class="col pl-0">
+																		<label class="control-label h6 " id="current_day_label">
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-group col-md-12" id="time_view">
+														<div class="row">
+															<div class="col-md-3">
+																<label class="control-label lead">
+																	<strong>Time</strong>
+																</label>
+															</div>
+															<div class="col-md-3">
+																<select class="form-control" name="current_time">
+																	<option value="Full Day">Full Day</option>
+																	<option value="00">00</option>
+																	<option value="01">01</option>
+																	<option value="02">02</option>
+																	<option value="03">03</option>
+																	<option value="04">04</option>
+																	<option value="05">05</option>
+																	<option value="06">06</option>
+																	<option value="07">07</option>
+																	<option value="08">08</option>
+																	<option value="09">09</option>
+																	<option value="10">10</option>
+																	<option value="11">11</option>
+																	<option value="12">12</option>
+																	<option value="13">13</option>
+																	<option value="14">14</option>
+																	<option value="15">15</option>
+																	<option value="16">16</option>
+																	<option value="17">17</option>
+																	<option value="18">18</option>
+																	<option value="19">19</option>
+																	<option value="20">20</option>
+																	<option value="21">21</option>
+																	<option value="22">22</option>
+																	<option value="23">23</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="form-group col-md-12" id="accumulation_view">
+														<div class="row">
+															<div class="col-md-12">
+																<div class="row">
+																	<label class="label col-md-3 lead">
+																		<strong>Accumulation</strong>
+																	</label>
+																	<div class="col">
+																		<label class="switch">
+																			<input id="accumulation" type="checkbox" name="accumulation">
+																			<span class="slider round"></span>
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="row accumulation_subview" style="display: none">
+															<div class="col-md-12 pt-1">
+																<div class="row">
+																	<div class="col-md-3 ">
+																		<label class="control-label pl-4">
+																			Phase
+																			<sub>#</sub>
+																		</label>
+																	</div>
+																	<div class="col-md-3">
+																		<input type="number" class="form-control" name="accumulate_phase" min="0" />
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-12 pt-1">
+																<div class="row">
+																	<div class="col-md-3">
+																		<label class="control-label pl-4">
+																			Duration
+																			<sub>phases</sub>
+																		</label>
+																	</div>
+																	<div class="col-md-3">
+																		<input type="number" class="form-control" name="accumulate_duration" min="0" />
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-12 pt-1">
+																<div class="row">
+																	<div class="col-md-3">
+																		<label class="control-label pl-4">
+																			Start @
+																			<sub>phase</sub>
+																		</label>
+																	</div>
+																	<div class="col-md-3">
+																		<input type="number" class="form-control" name="accumulate_start" min="0" />
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-group col-md-12" id="#sumo_view">
+														<div class="row">
+															<div class="col-md-12">
+																<div class="row">
+																	<label class="label col-md-3 lead">
+																		<strong>SUMO-GUI</strong>
+																	</label>
+																	<div class="col">
+																		<label class="switch">
+																			<input id="sumo-gui" type="checkbox" name="sumo" checked/>
+																			<span class="slider round"></span>
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" id="run" class="btn btn-primary btn-lg pl-4 pr-4 mt-2 mb-4">
+										<i class="fas fa-play pr-2"></i>Run</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<input type="hidden" id="mode" name="mode">
+			</div>
+		</fieldset>
+
+	</form>
+	<div class="">
+		<div class="">
+			<div class="loader mr-auto ml-auto"></div>
+		</div>
+	</div>
+	<!-- Large modal -->
+	<button type="button" id="summary_trigger" class="btn btn-primary d-none" data-toggle="modal" data-target="#summary_view">Large modal</button>
+
+	<div class="modal fade" id="summary_view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content p-5">
+				<div class="h1 text-primary" id="summary_view_header">
+					Summary
+					<hr/>
+				</div>
+				<div id="summary_view_content">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		$(document).ready(function () {
+			jQuery.validator.setDefaults({
+				debug: true,
+				success: "valid"
+			});
+
+			var partial_submit = false;
+
+			$("#run").hide();
+			$(".loader").hide();
+			$('.datepicker').datepicker({
+				format: 'dd/mm/yy',
+			});
+			$("#accumulation").change(function () {
+				$(".accumulation_subview").toggle(200);
+			});
+
+			$("#data_files").click(function () {
+				$("#hidden_data_files").click();
+			});
+			$("#hidden_data_files").change(function () {
+				var names = "";
+				for (var i = 0; i < this.files.length; i++) {
+					names += (i != 0 ? "," : "") + this.files.item(i).name;
+				}
+				$("#data_files_label").text(names);
+			});
+
+			$(".nav-link").click(function () {
+				$("#run").fadeIn(200);
+			});
+
+			$("#train_model").click(function () {
+				$("#phase_duration_view").show(200);
+				$("#date_view, #time_view, #accumulation_view").hide(200);
+				$("#mode").val("train");
+			});
+
+			$("#test_model").click(function () {
+				$("#phase_duration_view, #date_view, #time_view, #accumulation_view").show(200);
+				$("#mode").val("test_model");
+			});
+
+			$("#test_static").click(function () {
+				$("#date_view, #time_view, #accumulation_view").show(200);
+				$("#phase_duration_view").hide(200);
+				$("#mode").val("test_static");
+
+				partial_submit = false;
+				$(".extra").remove();
+
+			});
+
+			$("#run").click(function () {
+				if ($("#hidden_data_files")[0].files.length == 0) {
+					$("#data_files_label").html("<div class = 'text-danger'>This field is required.</div>");
+					return false;
+				}
+				if ($("#mode").val() != "train" && $("#current_day").val() == "") {
+					$("#current_day_label").html("<div class = 'text-danger'>This field is required.</div>");
+					return false;
+				}
+				if ($('#gui_variables').valid()) {
+
+					$(".content-body, .loader").toggle(300);
+					if ($("#mode").val() != "test_static") {
+						$.ajax({
+							url: partial_submit ? '/run_sim' :'/load_lanes',
+							type: 'POST',
+							data: new FormData($('#gui_variables')[0]),
+							processData: false,
+							contentType: false,
+							success: function (data) {
+								if(!partial_submit){
+									partial_submit = true;
+									for (var i = 0; i < data.length; i++) {
+										$("#fields").append(`
+											<div class="form-group col-md-12 extra">
+												<div class="row">
+													<div class="col-md-12">
+														<div class="row">
+															<label class="label col-md-12">
+																<strong>` + data[i] + `</strong>
+															</label>
+														</div>
+													</div>
+													</div>
+												<div class="row">
+													<div class="col-md-12 pt-1">
+														<div class="row">
+															<div class="col-md-3">
+																<label class="control-label pl-4 " style="font-size:80%;">
+																	Max Queue Length
+																</label>
+															</div>
+															<div class="col-md-3">
+																<input type="number" class="form-control" name="` + data[i] +`0" min="1" required />
+															</div>
+														</div>
+													</div>
+													<div class="col-md-12 pt-1">
+														<div class="row">
+															<div class="col-md-3">
+																<label class="control-label pl-4" style="font-size:80%;">
+																	Max Time Delay
+																</label>
+															</div>
+															<div class="col-md-3">
+																<input type="number" class="form-control" name="` + data[i] +`1" min="1" required/>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										`);
+									}
+									$(".content-body, .loader").toggle(300);
+								}else if($("#mode").val() == "test_model"){
+									$("#summary_view_header").html("Summary of Model Test<hr>");
+									$("#summary_view_content").html(data);
+									$('#summary_trigger').click();
+								}
+							}
+						});
+					} else {
+						$.ajax({
+							url: '/run_sim',
+							type: 'POST',
+							data: new FormData($('#gui_variables')[0]),
+							processData: false,
+							contentType: false,
+							success: function (data) {
+								$("#summary_view_header").html("Summary of Static Test<hr>");
+								$("#summary_view_content").html(data);
+								$('#summary_trigger').click();
+							}
+						});
+					}
+				}
+			});
+
+			$("#summary_view").on("hidden.bs.modal", function () {
+				$(".content-body, .loader").toggle(300);
+			});
+		});
+
+
+	</script>
+</body>
+
+</html>

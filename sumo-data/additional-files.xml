@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 04/01/18 12:51:03 by SUMO polyconvert Version 0.31.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/polyconvertConfiguration.xsd">
+
+    <input>
+        <net-file value="map.net.xml"/>
+        <osm-files value="ain-mreysse.osm"/>
+        <type-file value="typemap.xml"/>
+    </input>
+
+    <output>
+        <output-file value="map.poly.xml"/>
+    </output>
+
+    <processing>
+        <poi-layer-offset value="5"/>
+    </processing>
+
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <location netOffset="-728423.50,-3753332.48" convBoundary="0.00,-0.00,1960.91,848.82" origBoundary="35.470204,33.895645,35.491560,33.903074" projParameter="+proj=utm +zone=36 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"/>
+
+    <poly id="485335661" type="tourism" color="207,245,201" fill="1" layer="-2.00" shape="1821.35,650.05 1814.94,650.84 1807.25,649.67 1800.93,643.79 1799.15,634.45 1798.14,627.12 1799.17,624.63 1822.29,646.78 1821.35,650.05"/>
+    <poly id="485335664" type="building" color="255,230,230" fill="1" layer="-1.00" shape="1876.50,676.16 1874.70,654.01 1869.36,654.07 1868.34,640.31 1853.75,640.82 1830.21,643.81 1870.23,676.19 1876.50,676.16"/>
+    <poly id="532137791" type="amenity" color="237,199,199" fill="1" layer="-1.00" shape="1742.64,636.96 1766.81,636.91 1766.77,626.40 1742.64,626.48 1742.64,636.96"/>
+    <poly id="532137791#1" type="building" color="255,230,230" fill="1" layer="-1.00" shape="1742.64,636.96 1766.81,636.91 1766.77,626.40 1742.64,626.48 1742.64,636.96"/>
+    <poly id="532137796" type="building" color="255,230,230" fill="1" layer="-1.00" shape="1733.60,632.49 1727.63,632.45 1729.31,645.35 1729.74,648.19 1766.87,645.02 1766.81,636.91 1733.60,636.97 1733.60,632.49"/>
+    <poly id="548072400" type="building" color="255,230,230" fill="1" layer="-1.00" shape="1832.12,633.76 1861.66,629.95 1862.40,615.39 1858.80,608.96 1848.84,612.86 1842.10,612.82 1842.15,621.34 1832.80,621.38 1832.72,624.40 1829.28,628.36 1832.12,633.76"/>
+	
+	<laneData id="1" file="lane-info.xml"/>
+</additional>
