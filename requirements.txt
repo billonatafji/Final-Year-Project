@@ -1,0 +1,6 @@
+numpy
+keras
+flask
+werkzeug
+pandas
+theano
