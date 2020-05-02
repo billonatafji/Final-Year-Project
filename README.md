@@ -114,8 +114,13 @@ You can use this file to watch how the model progresses during training, and how
 
 ![image](https://github.com/mbnatafgi/Final-Year-Project/raw/master/screenshots/gui.png)
 
+![image](https://github.com/mbnatafgi/Final-Year-Project/raw/master/screenshots/gui-2.png)
 
->In case you inspect the code, you'll notice that there is a lot of room for improvement. We did not follow best 
->practices by any means, our target at that point was to just get things working since we were total beginners at 
->Python, machine learning, SUMO and pretty much all of this :p!
+## Notes
+
+1. Disable the ad-blocker, if you have one enabled, when using the GUI since some block the file upload for some reason.
+
+2. In case you inspect the code, you'll notice that there is a lot of room for improvement. We did not follow best 
+practices by any means, our target at that point was to just get things working since we were total beginners at 
+Python, machine learning, SUMO and pretty much all of this :p!
 
